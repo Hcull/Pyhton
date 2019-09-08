@@ -1,0 +1,7 @@
+miles = eval(input("Enter amount of miles: "))
+
+conversion_factor = 0.62137119
+
+kilometers = miles / conversion_factor
+print (kilometers)
+

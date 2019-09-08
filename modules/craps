@@ -1,0 +1,40 @@
+import random
+
+def roll():
+    input("Press Enter to roll")
+    dice = random.randint(1, 6) + random.randint(1, 6)
+    print("You rolled a {}" .format(dice))
+    return dice
+
+def checkRoll(dice):
+    if dice == 7 or dice == 11:
+        print("You win")
+        
+    elif dice == 2 or dice == 3 or dice == 12:
+        print("You lose")
+        
+    else:
+        print("Time to roll again")
+        reRoll(dice)
+
+def reRoll(point):
+    dice = roll()
+    if dice == point:
+        print("You win")
+        
+    elif dice == 7:
+        print("You lose")
+        
+    else:
+        reRoll(point)
+def play():
+    print("Do you wanna play Craps? Y/n ")
+    response = input(">>> ").lower()
+    if response == "y":
+        checkRoll(roll())
+    else:
+        input("ENTER to quit")
+
+
+play()
+

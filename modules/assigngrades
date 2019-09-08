@@ -1,0 +1,9 @@
+def reverseList(num_list): #method to revers the numbers
+    num_list.reverse() #reverses the numbers
+    print (num_list) #prints the numbers
+
+numbers = [] #list to store numbes
+scores_string = input("Enter numbers separated by space: ")
+numbers = list((map(int, scores_string.split(" ")))) #takes string of input numbers into integers
+reverseList(numbers) #calling methods
+

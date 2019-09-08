@@ -1,0 +1,55 @@
+from time import time;
+import random;
+
+class StopWatch:
+  
+   def __init__(self):
+       #Private Variable startTime
+       self.__startTime = time();
+      
+   #set start time
+   def start(self):
+       self.__startTime = time();
+  
+   #set stop time  
+   def stop(self):
+       self.__endTime = time();
+      
+   #get start time
+   def getStartTime(self):
+       return self.__startTime;
+  
+   #get stop time  
+   def getStopTime(self):
+       return self.__endTime;
+  
+   #returns elapsed time
+   def getElapsedTime(self):
+       return self.getStopTime() - self.getStartTime();
+      
+def calculateSum():
+   watch = StopWatch();
+
+   #Start stopwatch
+   watch.start();
+  
+   #Performing sum for the values from 1 to 1000000
+   sum = 0;
+   for i in range(1,(1000000+1)):
+       sum = sum + i;
+  
+   #Stop the stopwatch
+   watch.stop();
+  
+   #Printing sum
+   print("\n\n Sum : " + str(sum));
+  
+   #Printed Elapsed time
+   print("\n\n Amount of time taken for adding numbers from 1 to 1000000: " + str(watch.getElapsedTime()));
+   print("\n\n");
+  
+calculateSum();
+
+  
+#Calling function
+calculateSum();

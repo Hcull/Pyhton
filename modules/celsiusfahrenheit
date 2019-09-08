@@ -1,0 +1,9 @@
+print('Fahrenheit\t Celsius')
+print('------------------------')
+
+# Print the degree comparisons
+for celsius in range(0, 21):
+    fahrenheit = 9 / 5 * celsius + 32
+    celsius = 5 / 9 * fahrenheit - 32
+    print(format(fahrenheit, '.1f'), '\t\t', celsius)
+

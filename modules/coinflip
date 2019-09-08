@@ -1,0 +1,9 @@
+import random
+
+# Create a list to store the results of the for loop; number of tosses are limited by range() and the returned values are limited by random.choice().
+
+tossed = [random.choice(["heads", "tails"]) for toss in range(100)]
+
+print("There are {} heads and {} tails.".format(tossed.count("heads"), tossed.count("tails")))
+
+

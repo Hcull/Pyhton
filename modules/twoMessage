@@ -1,0 +1,37 @@
+from tkinter import *
+
+window = Tk() #create a window object on Tk class
+
+window.title("Rotating Message")           #window title
+
+message = Label(window, text='Programming is fun', font='size, 20')      #initializing label
+
+message.pack()
+
+boolean = 0        #variable to keep track of left mouse click
+
+def leftclick(event):
+
+                global boolean
+
+                if boolean == 0:
+
+                                message.config(text='Programming is fun')         #updating label on left mouse click
+
+                                boolean = 1
+
+                else:
+
+                                message.config(text='It is fun to program')         #updating label on left mouse click
+
+                                boolean = 0
+
+frame = Frame(window, width=300, height=250)
+
+frame.bind("<Button-1>", leftclick)
+
+frame.pack()
+
+window.mainloop()
+
+

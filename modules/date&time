@@ -1,0 +1,33 @@
+import datetime
+import math
+class Time:
+    def __int__(self, hour, minute, second):
+        self._hour = hour
+        self._minute = minute
+        self._second = second
+    def get_hour(self):
+        return int(self._hour)
+    def get_minute(self):
+        return int(self._minute)
+    def get_second(self):
+        return int(self._second)
+    def setTime(self, elapseTime):
+        day = math.floor(elapseTime / 86400)
+        elapseTime = elapseTime - (day * 86400)
+        hh = math.floor(elapseTime / 3600)
+        elapseTime = elapseTime - (hh * 3600)
+        min = math.floor(elapseTime / 60)
+        elapseTime = elapseTime - (min * 60)
+        sec = elapseTime
+        self._hour = hh
+        self._minute = min
+        self._second = sec
+    def main():
+        datetime.datetime.now()
+        t = Time(datetime.datetime.now().hour, datetime.datetime.now().minute, datetime.datetime.now().second)
+print("Current time is ", datetime.datetime.now())
+elapseTime = int(input("Enter the elapsed time: "))
+Time(datetime.datetime.now().hour, datetime.datetime.now().minute, datetime.datetime.now().second).setTime(elapseTime)
+print("The hour:minute:second for the elapsed time is ", Time(datetime.datetime.now().hour, datetime.datetime.now().minute, datetime.datetime.now().second).gethour(), ".", Time(datetime.datetime.now().hour, datetime.datetime.now().minute, datetime.datetime.now().second).get_minute(), ".", Time(datetime.datetime.now().hour, datetime.datetime.now().minute, datetime.datetime.now().second).get_second())
+
+main()
